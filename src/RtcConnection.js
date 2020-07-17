@@ -29,12 +29,6 @@ class ConnectionClass {
       username: user.username
     };
 
-    console.log(this.rtc.DetectRTC, "test");
-
-    // if (this.rtc.DetectRTC === false) {
-    //   alert("Please attach a camera device.");
-    // }
-
     var bitrates = 512;
     var resolutions = "Ultra-HD";
     var videoConstraints = {};

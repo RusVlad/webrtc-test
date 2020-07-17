@@ -10,10 +10,10 @@ const ioServer = require("socket.io");
 const RTCMultiConnectionServer = require("./node_scripts/index.js");
 
 var PORT = process.env.PORT || 9001;
-var isUseHTTPs = false;
+var isUseHTTPs = true;
 
 const jsonPath = {
-  config: "config.json",
+  config: "../config.json",
   logs: "logs.json"
 };
 

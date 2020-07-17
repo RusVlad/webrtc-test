@@ -11,7 +11,6 @@ const VideoContainer = () => {
 
   connection.onstream = function (event) {
     console.log("ON STREAM TEST");
-    alert("ON STREAM TEST");
     if (event.type === "local") {
       console.log(localVideoThumbnailsArr.get(), "ON STREAM - ADD LOCAL STREAM");
 
@@ -61,27 +60,11 @@ const VideoContainer = () => {
       console.log(localStream, "CLOSE LOCAL STREAM - TEST");
       localStream.stop();
     });
-
-    // find a way to close socket if user is the only one left.
-    // close socket.io connection
-    // connection.closeSocket();
   };
-
-  // connection.onUserStatusChanged = function (event) {
-  //   console.log("USER STATUS CHANGED TEST", event);
-  //   var isOffline = event.status === "offline";
-
-  //   var targetUsername = event.extra.username;
-
-  //   if (isOffline) {
-  //     alert(targetUsername + " left.");
-  //   }
-  // };
 
   const staticId = "qwe123";
 
   const openOrJoin = () => {
-    alert("TRYIN TO JOIN" + staticId);
     connection.openOrJoin(staticId);
   };
   return (
