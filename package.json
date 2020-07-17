@@ -8,7 +8,10 @@
     "@testing-library/user-event": "^7.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "rtcmulticonnection": "^3.7.0",
+    "rtcmulticonnection-react-js": "0.0.2",
+    "socket.io": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
