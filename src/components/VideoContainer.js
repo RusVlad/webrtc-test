@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import connection from "./RtcConnection";
 import localVideoThumbnailsArr from "./VideoThumbnailsClass";
 import VideoThumbnailsList from "./VideoThumbnailsList";
-import Video from "./Video";
+import Video from "../Video";
 
 const VideoContainer = () => {
   const [mainVideo, setMainVideo] = useState(null);
   const [videoThumbnailsArr, setVideoThumbnailsArr] = useState([]);
-  console.log(videoThumbnailsArr, "TEST INTRO");
 
   connection.onstream = function (event) {
     console.log("ON STREAM TEST");
@@ -37,7 +36,7 @@ const VideoContainer = () => {
     if (event.type === "remote") {
       localVideoThumbnailsArr.findAndRemove(event.streamid);
       setVideoThumbnailsArr([...localVideoThumbnailsArr.get()]);
-      console.log(`REMOTE STREAM CLOSING. CLOSING REMOTE STREAM VIDEO - TEST`, event, connection.isOnline, connection.isOffline);
+      console.log(`REMOTE STREAM CLOSING. CLOSING REMOTE STREAM VIDEO - TEST`, event);
 
       notifyRemoteUserLeft(event.extra.username);
     }
@@ -60,8 +59,12 @@ const VideoContainer = () => {
       console.log(localStream, "CLOSE LOCAL STREAM - TEST");
       localStream.stop();
     });
+
+    // last user will have to close the socket
+    // connection.closeSocket();
   };
 
+  // room ID.
   const staticId = "qwe123";
 
   const openOrJoin = () => {

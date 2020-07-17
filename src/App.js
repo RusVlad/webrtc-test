@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import VideoContainer from "./VideoContainer";
+import VideoContainer from "./components/VideoContainer";
 
 function App() {
   return (
